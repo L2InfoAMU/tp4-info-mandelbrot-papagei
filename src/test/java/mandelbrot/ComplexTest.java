@@ -134,7 +134,7 @@ public class ComplexTest {
         assertEquals(c1.hashCode(), c2.hashCode());
     }
 
-
+ /* ***************************** TEST Created ************************** */
     @Test
     void testEquals(){
         Complex c1 = new Complex(real, imaginary);
@@ -156,6 +156,19 @@ public class ComplexTest {
         assertEquals(expected,c1.real(real) );
         c1 = new Complex(0,0);
         assertEquals(expected,c1.real(real) );
+    }
+
+    @Test
+    void testAdd(){
+        Complex c1 = new Complex(real, imaginary);
+        Complex c2 = new Complex(real, imaginary);
+        Complex c3 = new Complex(c1.real + c2.real, c1.imaginary +c2.imaginary);
+        assertEquals(c3,c1.add(c2));
+        c2 = new Complex(3,16);
+        c3 = new Complex(c1.real + 3,c1.imaginary +16);
+        assertEquals(c3 ,c1.add(c2));
+        assertEquals(c3 ,c2.add(c1));
+
     }
 
 
