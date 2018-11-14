@@ -171,5 +171,19 @@ public class ComplexTest {
 
     }
 
+    @Test
+    void testSubtract(){
+        Complex c1 = new Complex(real, imaginary);
+        Complex c2 = new Complex(real, imaginary);
+        Complex c3 = new Complex(c1.real - c2.real, c1.imaginary -c2.imaginary);
+        assertEquals(c3,c1.subtract(c2));
 
+        c2 = new Complex(3,16);
+        c3 = new Complex(c1.real - 3,c1.imaginary -16);
+        Complex c4 = new Complex(3 - c1.real , 16 -c1.imaginary);
+        
+        assertEquals(c3 ,c1.subtract(c2));
+        assertEquals(c4 ,c2.subtract(c1));
+
+    }
 }
