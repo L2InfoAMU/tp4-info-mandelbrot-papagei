@@ -8,16 +8,21 @@ import javafx.stage.Stage;
 
 public class Main extends Application {
 
+
     @Override
     public void start(Stage primaryStage) throws Exception {
         Parent root = FXMLLoader.load(getClass().getResource("/viewer/viewer.fxml"));
         primaryStage.setTitle("Mandelbrot");
         primaryStage.setScene(new Scene(root, 1200, 900));
         primaryStage.show();
+
     }
 
 
     public static void main(String[] args) {
+        // Change the color printed in the file : Histogram
+            // this file is in the actual folder /viewer/
         launch(args);
+
     }
 }
