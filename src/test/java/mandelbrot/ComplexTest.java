@@ -181,9 +181,25 @@ public class ComplexTest {
         c2 = new Complex(3,16);
         c3 = new Complex(c1.real - 3,c1.imaginary -16);
         Complex c4 = new Complex(3 - c1.real , 16 -c1.imaginary);
-        
+
         assertEquals(c3 ,c1.subtract(c2));
         assertEquals(c4 ,c2.subtract(c1));
+
+    }
+    @Test
+    void testMultiply(){
+        Complex c1 = new Complex(real, imaginary);
+        Complex c2 = new Complex(real, imaginary);
+        Complex c3 = new Complex(this.real * c2.real - this.imaginary * c2.imaginary,
+                this.real * c2.imaginary + this.imaginary * c2.real);
+        assertEquals(c3,c1.multiply(c2));
+        assertEquals(c3,c2.multiply(c1));
+
+        c2 = new Complex(3,16);
+        c3 = new Complex(this.real * 3 - this.imaginary * 16,
+                this.real * 16 + this.imaginary * 3);
+
+        assertEquals(c3 ,c1.multiply(c2));
 
     }
 }
