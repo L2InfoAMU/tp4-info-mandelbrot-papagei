@@ -147,9 +147,16 @@ public class ComplexTest {
         c2 = new Complex(-real, -imaginary);
         assertEquals(false,c1.equals(c2));
 
-
     }
 
+    @Test
+    void testReal(){
+        Complex c1 = new Complex(real, imaginary);
+        Complex expected = new Complex(real,0);
+        assertEquals(expected,c1.real(real) );
+        c1 = new Complex(0,0);
+        assertEquals(expected,c1.real(real) );
+    }
 
 
 }
