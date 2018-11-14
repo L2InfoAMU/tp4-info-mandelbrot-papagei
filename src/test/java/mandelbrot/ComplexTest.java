@@ -216,4 +216,23 @@ public class ComplexTest {
         assertEquals(Math.sqrt(c2), c1.modulus());
     }
 
+    @Test
+    void testPow(){
+        int p = 13; //modifier p pour tester toute valeur possible. ET p>0 d'apres la methode.
+        Complex c1 = new Complex(real, imaginary);
+        Complex c2 = c1;
+        if (p==0){
+            c2 = new Complex(1,0);
+        }
+        else{
+            while (p > 1){
+                c2.multiply(c1);
+                p--;
+            }
+        }
+
+        assertEquals(c2,c1.pow(p));
+
+    }
+
 }
