@@ -232,7 +232,22 @@ public class ComplexTest {
         }
 
         assertEquals(c2,c1.pow(p));
+    }
 
+    @Test
+    void testScale(){
+        int decimal = -12;
+        Complex c1 = new Complex(real, imaginary);
+        Complex c2 = new Complex(c1.real * decimal , c1.imaginary *decimal);
+        assertEquals(c2,c1.scale(decimal));
+
+        decimal = 0;
+        c2 = new Complex(c1.real * decimal , c1.imaginary *decimal);
+        assertEquals(c2,c1.scale(decimal));
+
+        decimal = 457;
+        c2 = new Complex(c1.real * decimal , c1.imaginary *decimal);
+        assertEquals(c2,c1.scale(decimal));
     }
 
 }
